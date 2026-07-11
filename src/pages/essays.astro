@@ -1,0 +1,23 @@
+---
+// src/pages/essays.astro
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const essays = (await getCollection("essays")).sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+---
+
+<BaseLayout title="Essays — Latent Form Theory">
+  <main>
+    <h1>Essays</h1>
+    <ul>
+      {essays.map((essay) => (
+        <li>
+          <a href={`/essays/${essay.id}/`}>{essay.data.title}</a>
+          <p>{essay.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
