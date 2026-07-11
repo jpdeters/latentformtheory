@@ -1,17 +1,61 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Latent Form Theory">
+  <header class="hero">
+    <h1>Latent Form Theory</h1>
+    <p>
+      Revealing inherent order through disciplined choice.
+    </p>
+  </header>
+
+  <section>
+    <p>
+      Latent Form Theory explores the relationship between material,
+      intention, and the choices that reveal essential form.
+    </p>
+  </section>
+
+  <section>
+    <h2>Beyond Subtraction</h2>
+
+    <p>
+      Nothing reaches its highest expression by accumulation alone.
+      It reaches it through discernment—by removing what conceals its essence.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 100px 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    color: #555;
+  }
+
+  section {
+    margin-bottom: 70px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  section p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 700px;
+  }
+</style>
