@@ -1,12 +1,12 @@
 ---
 title: "The Dog Hidden in the Wood: What an Appalachian Craftsman Taught Me About Design"
-description: "A childhood encounter with an Appalachian craftsman revealed a deeper understanding of design, material intelligence, and the principles that would become Latent Form Theory."
+description: "A childhood encounter with an Appalachian woodcarver revealed a lifelong lesson about material intelligence, creative restraint, and the hidden forms waiting to be discovered."
 date: "2026-07-11"
 ---
 
-# The Dog Hidden in the Wood: What an Appalachian Craftsman Taught Me About Design
-
 There is a distinct, rhythmic sound to a sharp blade passing through wood—a quiet, tearing shhhck that feels less like destruction and more like a sigh of relief from the material itself.
+
+![An Appalachian craftsman carving a piece of wood](/images/essays/dog-hidden-in-wood/hero.jpg)
 
 I was eleven years old when I first encountered an idea that would quietly follow me for the rest of my life.
 
@@ -52,9 +52,9 @@ I eventually gave this way of thinking a name:
 
 At its simplest:
 
-**Creation is the revelation of form through essential subtraction.**
+**Latent Form Theory is the revelation of inherent order through disciplined choice.**
 
-Latent Form Theory proposes that creative work is not fundamentally defined by how much we add, but by how carefully we choose what remains.
+Creation is not fundamentally defined by how much we add, but by how carefully we choose what remains.
 
 The maker begins with a field of possibilities and, through disciplined observation and judgment, removes everything that prevents the essential form from emerging.
 
@@ -76,7 +76,7 @@ It is knowing what can finally be removed.
 
 The old man sitting outside that country store was not merely whittling a stick to pass the time. He was practicing a form of design clarity that many spend a lifetime trying to understand.
 
-He knew something I would not understand until decades later:
+He understood something I would spend decades learning:
 
 **The form does not always need to be created.  
 Sometimes it only needs to be revealed.**
@@ -84,3 +84,9 @@ Sometimes it only needs to be revealed.**
 The dog was always there in the wood.
 
 It simply needed someone patient enough to let it out.
+
+---
+
+**Essay Series:** Origins of Latent Form Theory  
+**Concepts Introduced:** Material intelligence, disciplined choice, essential subtraction  
+**Author:** Jason Deters
