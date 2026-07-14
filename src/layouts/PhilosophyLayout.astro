@@ -1,19 +1,55 @@
 ---
 // src/layouts/PhilosophyLayout.astro
+import Header from "../components/Header.astro"; // Optional: keeping standard imports if you choose to swap raw HTML with components later
+import Footer from "../components/Footer.astro";
+
 interface Props {
   title: string;
   volume: string;
+  description?: string; // Made optional so it handles fallbacks
+  image?: string;
 }
 
-const { title, volume } = Astro.props;
+// 1. Destructure props and establish specific fallbacks for the philosophy sections
+const { 
+  title, 
+  volume,
+  description = `Read ${volume}: ${title} — an in-depth exploration of the architectural frameworks, art, and design philosophy of Latent Form Theory.`,
+  image = "/images/default-share-image.jpg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Essential Global Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} — {volume}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title} — {volume} | Latent Form Theory</title>
+    <meta name="title" content={`${title} — ${volume} | Latent Form Theory`} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} — ${volume}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <!-- Twitter Preview Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} — ${volume}`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
   </head>
   <body>
     <!-- Top Progress Bar -->
@@ -113,264 +149,40 @@ const { title, volume } = Astro.props;
 </html>
 
 <style is:global>
-  /* --- Global Header Styling --- */
-  .site-header {
-    width: 100%;
-    background: var(--background);
-    /* border-bottom: 1px solid #e8e7e3; (Optional: match your homepage borders if any) */
-  }
-
-  .header-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 40px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .site-logo {
-    font-family: Georgia, serif;
-    font-size: 1.25rem;
-    color: var(--text);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
-
-  .site-logo:hover {
-    opacity: 0.7;
-  }
-
-  .site-nav {
-    display: flex;
-    gap: 30px;
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-  }
-
-  .site-nav a {
-    color: var(--text);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
-
-  .site-nav a:hover {
-    opacity: 0.6;
-  }
-
-  /* --- Progress Bar styling --- */
-  #progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 2px;
-    background: var(--text);
-    z-index: 100;
-    width: 0%;
-    transition: width 0.1s ease;
-  }
-
-  /* --- Structural Grid --- */
-  .layout-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 60px 24px 100px; /* Reduced top padding to flow below header */
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 80px;
-  }
-
-  /* --- Sticky Sidebar --- */
-  .sidebar {
-    position: relative;
-  }
-
-  .sidebar-sticky {
-    position: sticky;
-    top: 40px; /* Adjusted to sit comfortably below header */
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-  }
-
-  .sidebar-title {
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 40px;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-  }
-
-  .sidebar-title a {
-    color: var(--text);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
-
-  .sidebar-title a:hover {
-    opacity: 0.7;
-  }
-
-  /* --- TOC Navigation Links --- */
-  .toc-nav {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
-  }
-
-  .toc-section-title {
-    display: block;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    color: var(--muted);
-    font-weight: 600;
-    margin-bottom: 12px;
-    letter-spacing: 0.1em;
-  }
-
-  .toc-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .toc-nav li {
-    margin-bottom: 10px;
-  }
-
-  .toc-nav a {
-    color: var(--muted);
-    transition: color 0.2s ease;
-    text-decoration: none;
-  }
-
-  .toc-nav a:hover {
-    color: var(--text);
-  }
-
-  .toc-section.separator {
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  /* --- Content Body & Typography --- */
-  .content-body {
-    max-width: 720px;
-  }
-
-  .scroll-anchor {
-    scroll-margin-top: 60px;
-  }
-
-  .content-body h2 {
-    margin-top: 80px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #e8e7e3;
-    padding-bottom: 15px;
-  }
-
-  .content-body h3 {
-    margin-top: 40px;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-  }
-
-  .content-body ul, .content-body ol {
-    font-size: 1.15rem;
-    margin-bottom: 30px;
-    padding-left: 20px;
-  }
-
-  .content-body li {
-    margin-bottom: 8px;
-  }
-
-  .content-body blockquote {
-    margin: 40px 0;
-    padding-left: 30px;
-    border-left: 2px solid var(--text);
-    font-style: italic;
-    color: var(--muted);
-  }
-
-  .content-body blockquote p {
-    font-size: 1.2rem;
-  }
-
-  hr {
-    border: 0;
-    height: 1px;
-    background: #e8e7e3;
-    margin: 60px 0;
-  }
-
-  /* --- Responsive Design --- */
-  @media (max-width: 900px) {
-    .header-container {
-      flex-direction: column;
-      gap: 20px;
-      padding: 30px 20px;
-    }
-
-    .layout-container {
-      grid-template-columns: 1fr;
-      padding: 30px 20px 60px;
-      gap: 40px;
-    }
-
-    .sidebar-sticky {
-      position: relative;
-      top: 0;
-      max-height: none;
-    }
-
-    .toc-nav {
-      display: none; /* Hide TOC on mobile */
-    }
-    
-    .sidebar-title {
-      margin-bottom: 20px;
-    }
-  }
-
-  /* --- Back to Top Button --- */
-  #back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background: var(--text);
-    color: var(--background);
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
-    z-index: 90;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-
-  #back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  #back-to-top:hover {
-    transform: translateY(-4px);
-  }
-
-  @media (max-width: 900px) {
-    #back-to-top {
-      bottom: 24px;
-      right: 24px;
-    }
-  }
+  /* Keep all your existing global styles completely untouched down here */
+  .site-header { width: 100%; background: var(--background); }
+  .header-container { max-width: var(--max-width); margin: 0 auto; padding: 40px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .site-logo { font-family: Georgia, serif; font-size: 1.25rem; color: var(--text); text-decoration: none; transition: opacity 0.2s ease; }
+  .site-logo:hover { opacity: 0.7; }
+  .site-nav { display: flex; gap: 30px; font-family: system-ui, -apple-system, sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; }
+  .site-nav a { color: var(--text); text-decoration: none; transition: opacity 0.2s ease; }
+  .site-nav a:hover { opacity: 0.6; }
+  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--text); z-index: 100; width: 0%; transition: width 0.1s ease; }
+  .layout-container { max-width: var(--max-width); margin: 0 auto; padding: 60px 24px 100px; display: grid; grid-template-columns: 280px 1fr; gap: 80px; }
+  .sidebar { position: relative; }
+  .sidebar-sticky { position: sticky; top: 40px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .sidebar-title { font-size: 2rem; margin-top: 0; margin-bottom: 40px; letter-spacing: -0.02em; line-height: 1.2; }
+  .sidebar-title a { color: var(--text); text-decoration: none; transition: opacity 0.2s ease; }
+  .sidebar-title a:hover { opacity: 0.7; }
+  .toc-nav { font-family: system-ui, -apple-system, sans-serif; font-size: 0.85rem; letter-spacing: 0.02em; }
+  .toc-section-title { display: block; text-transform: uppercase; font-size: 0.75rem; color: var(--muted); font-weight: 600; margin-bottom: 12px; letter-spacing: 0.1em; }
+  .toc-nav ul { list-style: none; padding: 0; margin: 0; }
+  .toc-nav li { margin-bottom: 10px; }
+  .toc-nav a { color: var(--muted); transition: color 0.2s ease; text-decoration: none; }
+  .toc-nav a:hover { color: var(--text); }
+  .toc-section.separator { margin-top: 30px; padding-top: 30px; border-top: 1px solid #e5e5e5; }
+  .content-body { max-width: 720px; }
+  .scroll-anchor { scroll-margin-top: 60px; }
+  .content-body h2 { margin-top: 80px; margin-bottom: 30px; border-bottom: 1px solid #e8e7e3; padding-bottom: 15px; }
+  .content-body h3 { margin-top: 40px; margin-bottom: 15px; font-size: 1.4rem; }
+  .content-body ul, .content-body ol { font-size: 1.15rem; margin-bottom: 30px; padding-left: 20px; }
+  .content-body li { margin-bottom: 8px; }
+  .content-body blockquote { margin: 40px 0; padding-left: 30px; border-left: 2px solid var(--text); font-style: italic; color: var(--muted); }
+  .content-body blockquote p { font-size: 1.2rem; }
+  hr { border: 0; height: 1px; background: #e8e7e3; margin: 60px 0; }
+  @media (max-width: 900px) { .header-container { flex-direction: column; gap: 20px; padding: 30px 20px; } .layout-container { grid-template-columns: 1fr; padding: 30px 20px 60px; gap: 40px; } .sidebar-sticky { position: relative; top: 0; max-height: none; } .toc-nav { display: none; } .sidebar-title { margin-bottom: 20px; } }
+  #back-to-top { position: fixed; bottom: 40px; right: 40px; background: var(--text); color: var(--background); border: none; width: 44px; height: 44px; border-radius: 50%; font-family: system-ui, -apple-system, sans-serif; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease; z-index: 90; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+  #back-to-top.visible { opacity: 1; visibility: visible; }
+  #back-to-top:hover { transform: translateY(-4px); }
+  @media (max-width: 900px) { #back-to-top { bottom: 24px; right: 24px; } }
 </style>
