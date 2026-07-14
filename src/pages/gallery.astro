@@ -1,0 +1,123 @@
+---
+// src/pages/gallery.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Temporary array to hold placeholder structure for objects
+const galleryItems = [
+  { id: 1, title: "Still Horizon Side Table", material: "Quarter-sawn White Oak" },
+  { id: 2, title: "The Horizon Votive Holder", material: "Peruvian Walnut & White Oak" },
+  { id: 3, title: "Minimalist Media Console", material: "Solid Walnut" },
+  { id: 4, title: "Geometric Table Lamp", material: "Premium Hardwood" },
+];
+---
+
+<BaseLayout title="Gallery — Latent Form Theory">
+  <main class="gallery-wrapper">
+    <header class="hero-section">
+      <p class="eyebrow">Stabilized Evidence</p>
+      <h1>Gallery</h1>
+      <p class="lead">Forms in equilibrium with their constraints—resolved through the controlled reduction of material and the withdrawal of intervention.</p>
+    </header>
+
+    <section class="gallery-grid">
+      {galleryItems.map((item) => (
+        <div class="gallery-card">
+          <div class="image-container">
+            {/* Minimalist structural placeholder box utilizing your theme colors */}
+            <svg class="placeholder-svg" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="currentColor" opacity="0.03" />
+              <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="currentColor" stroke-width="0.5" opacity="0.1" />
+            </svg>
+            {/* Once you have photos, comment out the SVG above and uncomment the image tag below: */}
+            {/* <img src={`/images/gallery/item-${item.id}.jpg`} alt={item.title} class="gallery-image" /> */}
+          </div>
+          
+          <div class="item-meta">
+            <h2>{item.title}</h2>
+            <p>{item.material}</p>
+          </div>
+        </div>
+      ))}
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .gallery-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px 120px;
+  }
+
+  .hero-section {
+    padding: 120px 0 60px;
+  }
+
+  /* 2-Column Minimalist Grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 40px;
+  }
+
+  .gallery-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Restrained, non-bordered bounding container */
+  .image-container {
+    width: 100%;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  /* Clean, aspect-ratio locked placeholder */
+  .placeholder-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    color: var(--text);
+  }
+
+  .gallery-image {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Captions shifted below the frame with delicate font sizing */
+  .item-meta {
+    margin-top: 20px;
+  }
+
+  .item-meta h2 {
+    font-size: 1.25rem;
+    margin: 0 0 6px 0;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .item-meta p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Single-column adjustment for balanced viewing on phone screens */
+  @media (max-width: 750px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    
+    .hero-section {
+      padding: 60px 0 40px;
+    }
+  }
+</style>
