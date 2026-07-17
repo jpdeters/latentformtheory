@@ -1,79 +1,91 @@
 ---
 import "../styles/global.css";
 
-// 1. Get the current page URL and props
-const { title = "Latent Form Theory", image = "/images/default-share-image.jpg" } = Astro.props;
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Get page props
+const { 
+  title = "Latent Form Theory",
+  image = "/LFT-banner.jpg"
+} = Astro.props;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-// 2. Dynamic Fallback Logic tailored for Axiom Atelier
+// Dynamic description logic
 let description = Astro.props.description;
 
 if (!description) {
-  const path = Astro.url.pathname.replace(/\/$/, ""); // Cleans up trailing slashes
-  
+  const path = Astro.url.pathname.replace(/\/$/, "");
+
   if (path === "" || path === "/") {
-    description = "Handcrafted minimalist hardwood furniture and fine geological relief art.";
+    description = "The Latent Form Theory explores the revelation of inherent order through disciplined choice.";
   } else if (path.includes("manifesto")) {
-    description = `Explore the design philosophy and creative principles behind the minimalist collections at ${title}.`;
-  } else if (path.includes("collections")) {
-    description = `Browse the latest collection of premium hardwood furniture and textured fine art at ${title}.`;
-  } else if (path.includes("process")) {
-    description = `A look behind the scenes: How we forage, refine, and handcraft our premium artwork and furniture designs.`;
-  } else if (path.includes("contact")) {
-    description = `Get in touch with us at ${title} for custom woodworking commissions, inquiries, and design collaborations.`;
+    description = `Explore the philosophy and principles behind ${title}.`;
   } else if (path.includes("essays")) {
-    description = `Read our design essay "${title}"—exploring art, geometry, and woodworking materials.`;
+    description = `Read ${title} — essays exploring design, material, geometry, and creative philosophy.`;
   } else {
-    description = `Discover ${title}—custom luxury woodworking and fine geological relief art designs.`;
+    description = `Discover ${title} and explore ideas surrounding design, craftsmanship, and inherent order.`;
   }
 }
 ---
 
 <html lang="en">
   <head>
-    <!-- Essential Global Meta Tags -->
+    <!-- Essential Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Primary Meta Tags -->
+    <!-- Primary SEO -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph / Facebook / LinkedIn -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
 
-    <!-- Twitter Preview Tags -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.site)} />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-30NJZX7KX6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
 
-  gtag('config', 'G-30NJZX7KX6');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-30NJZX7KX6"></script>
+
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-30NJZX7KX6');
+    </script>
   </head>
 
+
   <body>
+
+    <Header />
+
     <main>
       <slot />
     </main>
+
+    <Footer />
+
   </body>
 </html>
+
 
 <style>
   body {
