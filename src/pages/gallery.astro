@@ -2,12 +2,27 @@
 // src/pages/gallery.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Temporary array to hold placeholder structure for objects
 const galleryItems = [
-  { id: 1, title: "Still Horizon Side Table", material: "Quarter-sawn White Oak" },
-  { id: 2, title: "The Horizon Votive Holder", material: "Peruvian Walnut & White Oak" },
-  { id: 3, title: "Minimalist Media Console", material: "Solid Walnut" },
-  { id: 4, title: "Geometric Table Lamp", material: "Premium Hardwood" },
+  {
+    title: "Still Horizon Side Table",
+    material: "Quarter-sawn White Oak",
+    image: "/images/still-horizon.jpeg",
+  },
+  {
+    title: "The Horizon Votive Holder",
+    material: "Peruvian Walnut & White Oak",
+    image: "/images/Horizon-Triplet-1.jpg",
+  },
+  {
+    title: "Minimalist Media Console",
+    material: "Peruvian Walnut",
+    image: "/images/Constellation.png",
+  },
+  {
+    title: "Geometric Table Lamp",
+    material: "Quarter Sawn White Oak",
+    image: "/images/Zenith.png",
+  },
 ];
 ---
 
@@ -23,13 +38,11 @@ const galleryItems = [
       {galleryItems.map((item) => (
         <div class="gallery-card">
           <div class="image-container">
-            {/* Minimalist structural placeholder box utilizing your theme colors */}
-            <svg class="placeholder-svg" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
-              <rect width="100%" height="100%" fill="currentColor" opacity="0.03" />
-              <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="currentColor" stroke-width="0.5" opacity="0.1" />
-            </svg>
-            {/* Once you have photos, comment out the SVG above and uncomment the image tag below: */}
-            {/* <img src={`/images/gallery/item-${item.id}.jpg`} alt={item.title} class="gallery-image" /> */}
+            <img
+  src={item.image}
+  alt={item.title}
+  class="gallery-image"
+/>
           </div>
           
           <div class="item-meta">
