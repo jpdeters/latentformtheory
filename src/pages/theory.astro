@@ -1,0 +1,261 @@
+---
+layout: "../layouts/PhilosophyLayout.astro";
+
+const volumes = [
+  {
+    title: "Volume I",
+    name: "Latent Form Theory",
+    subtitle: "The Philosophy of Essential Subtraction",
+    chapters: [
+      "The Nature of Form",
+      "Essential Subtraction",
+      "Composition and Necessity",
+      "The Role of the Maker"
+    ]
+  },
+  {
+    title: "Volume II",
+    name: "Modern Stratigraphy",
+    subtitle: "Material Memory and the Organization of Earth",
+    chapters: [
+      "Matter Before Image",
+      "Deep Time and Material Memory",
+      "Selection as Composition",
+      "Authenticity and Material Honesty",
+      "The Nexus of Timescales"
+    ]
+  },
+  {
+    title: "Volume III",
+    name: "The Disciplined Eye",
+    subtitle: "Perception, Judgment, and the Ethics of Seeing",
+    chapters: [
+      "Seeing Versus Looking",
+      "Taste and Judgment",
+      "Constraint",
+      "Silence",
+      "Stewardship",
+      "The Maker"
+    ]
+  }
+];
+---
+
+<div id="intro" class="scroll-anchor"></div>
+
+<div class="theory-layout">
+
+  <aside class="sidebar">
+
+    <h3>Latent Form Theory</h3>
+
+    <nav>
+      <a href="#overview">Overview</a>
+
+      {volumes.map((volume) => (
+        <section>
+          <strong>{volume.title}</strong>
+          <a href={`#${volume.title.toLowerCase().replace(" ", "-")}`}>
+            {volume.name}
+          </a>
+
+          <ul>
+            {volume.chapters.map((chapter) => (
+              <li>
+                <a href="#">
+                  {chapter}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+        </section>
+      ))}
+
+    </nav>
+
+  </aside>
+
+
+  <main class="theory-content">
+
+    <h1>Latent Form Theory</h1>
+
+    <p class="lead">
+      Latent Form Theory is a philosophy of making organized around the
+      recognition of inherent order. It argues that meaningful creation does
+      not begin with invention, but with perception — the ability to recognize
+      what already exists within material, structure, and possibility.
+    </p>
+
+
+    <section id="overview">
+
+      <h2>Overview</h2>
+
+      <p>
+        Every creative work begins with abundance: countless possible forms,
+        directions, and outcomes. Through disciplined choice, the maker removes
+        what is unnecessary until the remaining form achieves coherence,
+        balance, and necessity.
+      </p>
+
+      <p>
+        Latent Form Theory examines the relationship between material,
+        perception, and intervention. It proposes that the maker's role is not
+        to impose arbitrary intention upon the world, but to reveal and
+        organize relationships that already exist.
+      </p>
+
+    </section>
+
+
+    <section id="volume-i">
+
+      <h2>Volume I: Latent Form Theory</h2>
+
+      <h3>The Philosophy of Essential Subtraction</h3>
+
+      <p>
+        Volume I establishes the foundation of the philosophy: form emerges
+        through disciplined reduction. Creation is not merely the addition of
+        elements, but the elimination of what obscures essential structure.
+      </p>
+
+      <p>
+        The maker's responsibility is not to ask what can be added, but what
+        must remain.
+      </p>
+
+    </section>
+
+
+    <section id="volume-ii">
+
+      <h2>Volume II: Modern Stratigraphy</h2>
+
+      <h3>Material Memory and the Organization of Earth</h3>
+
+      <p>
+        Modern Stratigraphy explores the history already contained within
+        natural materials. Wood, stone, mineral pigments, and earth are not
+        passive resources but records of geological and biological processes.
+      </p>
+
+      <p>
+        Matter is not empty before human intervention. Every material arrives
+        carrying evidence of the forces that shaped it.
+      </p>
+
+    </section>
+
+
+    <section id="volume-iii">
+
+      <h2>Volume III: The Disciplined Eye</h2>
+
+      <h3>Perception, Judgment, and the Ethics of Seeing</h3>
+
+      <p>
+        The final volume examines the faculty required to recognize latent
+        order: disciplined perception.
+      </p>
+
+      <p>
+        Seeing is not passive observation. It is an acquired ability to
+        distinguish necessity from excess, composition from addition, and
+        meaningful restraint from absence.
+      </p>
+
+    </section>
+
+
+    <section id="conclusion">
+
+      <h2>The Complete Framework</h2>
+
+      <p>
+        Together, the three volumes form a complete philosophy of creative
+        practice:
+      </p>
+
+      <ul>
+        <li><strong>Method</strong> — the discipline of subtraction.</li>
+        <li><strong>Matter</strong> — the recognition of history within material.</li>
+        <li><strong>Maker</strong> — the cultivation of perception and judgment.</li>
+      </ul>
+
+      <p>
+        Latent Form Theory ultimately argues that creation is not the act of
+        bringing something from nothing. It is the disciplined practice of
+        recognizing, revealing, and carrying forward the order already present.
+      </p>
+
+    </section>
+
+
+  </main>
+
+</div>
+
+
+<style>
+
+.theory-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 760px);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.sidebar nav section {
+  margin-top: 1.5rem;
+}
+
+.sidebar ul {
+  padding-left: 1rem;
+  font-size: .9rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+
+.theory-content {
+  line-height: 1.75;
+}
+
+.theory-content h2 {
+  margin-top: 4rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+}
+
+.scroll-anchor {
+  position: relative;
+  top: -100px;
+}
+
+@media(max-width: 800px) {
+
+  .theory-layout {
+    display:block;
+  }
+
+  .sidebar {
+    position:relative;
+    margin-bottom:3rem;
+  }
+
+}
+
+</style>
