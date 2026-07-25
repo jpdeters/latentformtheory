@@ -1,0 +1,54 @@
+---
+import PhilosophyLayout from "../../layouts/PhilosophyLayout.astro";
+
+const volumes = [
+  {
+    title: "Volume I — Latent Form Theory",
+    subtitle: "The Philosophy of Essential Subtraction",
+    link: "/theory/volume-1/"
+  },
+  {
+    title: "Volume II — Modern Stratigraphy",
+    subtitle: "Material Memory and the Organization of Earth",
+    link: "/theory/volume-2/"
+  },
+  {
+    title: "Volume III — The Disciplined Eye",
+    subtitle: "Perception, Judgment, and the Ethics of Seeing",
+    link: "/theory/volume-3/"
+  }
+];
+---
+
+<PhilosophyLayout
+  title="Latent Form Theory"
+  volume="Axiom Atelier / Complete Works"
+>
+
+<div id="intro" class="scroll-anchor"></div>
+
+<p class="lead">
+Latent Form Theory is a philosophy of making organized around three questions:
+how form emerges, what materials already contain, and how perception allows
+meaning to become visible.
+</p>
+
+<p>
+The three volumes explore the relationship between reduction, material history,
+and disciplined attention.
+</p>
+
+<h2>The Complete Work</h2>
+
+<ul>
+  {volumes.map((volume) => (
+    <li>
+      <a href={volume.link}>
+        <strong>{volume.title}</strong><br />
+        {volume.subtitle}
+      </a>
+    </li>
+  ))}
+</ul>
+
+</PhilosophyLayout>

@@ -1,0 +1,93 @@
+---
+import PhilosophyLayout from "../../../layouts/PhilosophyLayout.astro";
+
+const chapters = [
+  { title: "Chapter 1 — The Nature of Perception", link: "/theory/volume-3/chapter-1/" },
+  { title: "Chapter 2 — Taste", link: "/theory/volume-3/chapter-2/" },
+  { title: "Chapter 3 — Constraint", link: "/theory/volume-3/chapter-3/" },
+  { title: "Chapter 4 — Silence", link: "/theory/volume-3/chapter-4/" },
+  { title: "Chapter 5 — Stewardship", link: "/theory/volume-3/chapter-5/" },
+  { title: "Final Chapter — The Maker", link: "/theory/volume-3/final-chapter/" }
+];
+---
+
+<PhilosophyLayout
+  title="Chapter X — Chapter Title"
+  volume="Volume III — The Disciplined Eye"
+  chapters={chapters}
+>
+
+<div id="top" class="scroll-anchor"></div>
+
+<h1>PART II — TASTE</h1>
+
+
+<p class="lead">
+One-sentence chapter subtitle.
+</p>
+
+<h2>I. First Section Title</h2>
+
+<p>
+First paragraph...
+</p>
+
+<p>
+Second paragraph...
+</p>
+
+<p><strong>Important concluding sentence.</strong></p>
+
+
+<h2>II. Second Section Title</h2>
+
+<p>
+Paragraph...
+</p>
+
+<p>
+Paragraph...
+</p>
+
+
+<h2>III. Third Section Title</h2>
+
+<p>
+Paragraph...
+</p>
+
+<p>
+Paragraph...
+</p>
+
+
+<h2>IV. Fourth Section Title</h2>
+
+<p>
+Paragraph...
+</p>
+
+<p>
+Paragraph...
+</p>
+
+
+<h2>V. Fifth Section Title</h2>
+
+<p>
+Paragraph...
+</p>
+
+<p>
+Paragraph...
+</p>
+
+
+<hr>
+
+<p style="display:flex; justify-content:space-between;">
+  <a href="/theory/volume-3/chapter-X/">← Previous Chapter</a>
+  <a href="/theory/volume-3/chapter-Y/">Next Chapter →</a>
+</p>
+
+</PhilosophyLayout>

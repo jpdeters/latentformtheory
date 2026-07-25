@@ -1,0 +1,303 @@
+---
+import PhilosophyLayout from "../layouts/PhilosophyLayout.astro";
+
+const chapters = [
+  {
+    volume: "Volume I: Latent Form Theory",
+    id: "volume-1",
+    sections: [
+      { title: "Overview", id: "v1-overview" },
+      { title: "1. The Blank Canvas", id: "v1-chapter-1" },
+      { title: "2. Entropic Reduction", id: "v1-chapter-2" },
+      { title: "3. Reading Material", id: "v1-chapter-3" },
+      { title: "4. Axis of Resolution", id: "v1-chapter-4" },
+    ],
+  },
+  {
+    volume: "Volume II: Modern Stratigraphy",
+    id: "volume-2",
+    sections: [
+      { title: "Overview", id: "v2-overview" },
+      { title: "1. Matter Before Image", id: "v2-chapter-1" },
+      { title: "2. Deep Time", id: "v2-chapter-2" },
+      { title: "3. Selection as Composition", id: "v2-chapter-3" },
+      { title: "4. Philosophy of Context", id: "v2-chapter-4" },
+      { title: "5. Material Honesty", id: "v2-chapter-5" },
+      { title: "6. Nexus of Timescales", id: "v2-chapter-6" },
+      { title: "7. Coordinate and Canvas", id: "v2-chapter-7" },
+    ],
+  },
+  {
+    volume: "Volume III: The Disciplined Eye",
+    id: "volume-3",
+    sections: [
+      { title: "Preface", id: "v3-preface" },
+      { title: "1. Perception", id: "v3-part-1" },
+      { title: "2. Taste", id: "v3-part-2" },
+      { title: "3. Constraint", id: "v3-part-3" },
+      { title: "4. Silence", id: "v3-part-4" },
+      { title: "5. Stewardship", id: "v3-part-5" },
+      { title: "6. The Maker", id: "v3-final" },
+    ],
+  },
+];
+---
+
+<PhilosophyLayout title="Latent Form Theory">
+  <div class="theory-layout">
+    <aside class="theory-sidebar">
+      <h2>Latent Form Theory</h2>
+      {
+        chapters.map((vol) => (
+          <div class="sidebar-volume">
+            <a href={`#${vol.id}`}>{vol.volume}</a>
+            <ul>
+              {vol.sections.map((sec) => (
+                <li>
+                  <a href={`#${sec.id}`}>{sec.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </aside>
+
+    <main class="theory-content">
+      <!-- INTRO -->
+      <section id="intro">
+        <h1>Latent Form Theory</h1>
+        <p class="lead">
+          Every creative work begins with abundance: countless possible forms, directions, and outcomes. Through disciplined choice, the maker removes what is unnecessary until the remaining form achieves coherence, balance, and necessity.
+        </p>
+      </section>
+
+      <!-- VOLUME 1 -->
+      <section id="volume-1">
+        <h2>Volume I: Latent Form Theory</h2>
+
+        <h3 id="v1-overview">The Philosophy of Essential Subtraction</h3>
+        <p class="lead">
+          Latent Form Theory: The Revelation of Form Through Essential Subtraction
+        </p>
+
+        <h3>Introduction: The Form That Was Already Waiting</h3>
+        <p>
+          I was eleven years old when I first encountered an idea that would quietly follow me for the rest of my life.
+        </p>
+        <p>
+          My family was backpacking through Kentucky along the Daniel Boone Trail when we stopped at an old country store in Berea. Outside sat an old man with a pocket knife in his hand and a small piece of wood resting against his palm.
+        </p>
+
+        <h3 id="v1-chapter-1">Chapter 1 — The Blank Canvas</h3>
+        <h4 id="v1-ch1-p1">I. The Myth of the Blank Canvas</h4>
+        <p>
+          A common belief in design is that creation begins with emptiness. The artist approaches a blank canvas. The sculptor approaches an untouched block of stone.
+        </p>
+
+        <h4 id="v1-ch1-p2">II. The Material That Already Knows</h4>
+        <p>
+          Industrial processes often depend upon reducing variation. A standardized board is valuable because it behaves predictably.
+        </p>
+
+        <h4 id="v1-ch1-p3">III. Two Ways of Approaching Material</h4>
+        <p>
+          There are two fundamentally different relationships a maker can have with material: imposition and discovery.
+        </p>
+
+        <h4 id="v1-ch1-p4">IV. Reading What Already Exists</h4>
+        <p>
+          To work through subtraction requires a different kind of attention. The surface of the material becomes evidence.
+        </p>
+
+        <h4 id="v1-ch1-p5">V. The First Reduction</h4>
+        <p>
+          The first removal of material is often misunderstood as the beginning of creation. In reality, it is the beginning of clarification.
+        </p>
+
+        <h4 id="v1-ch1-p6">VI. The Emergence of Inevitability</h4>
+        <p>
+          The most successful works often possess a peculiar quality: they seem as though they could not have been otherwise.
+        </p>
+
+        <h3 id="v1-chapter-2">Chapter 2 — Entropic Reduction</h3>
+        <h4 id="v1-ch2-p1">I. The Movement Toward Disorder</h4>
+        <p>
+          Every material exists within a constant state of change. Before form becomes clear, possibility exists everywhere.
+        </p>
+
+        <h4 id="v1-ch2-p2">II. Reduction as Direction</h4>
+        <p>
+          Subtraction is often misunderstood as a purely negative action. Every removal is also a direction.
+        </p>
+
+        <h3 id="v1-chapter-3">Chapter 3 — Reading Material as Structure</h3>
+        <p>
+          Before the hand shapes the material, the mind must learn to see it. The maker recognizes the order already present.
+        </p>
+
+        <h3 id="v1-chapter-4">Chapter 4 — The Axis of Resolution</h3>
+        <p>
+          The point of alignment where the behavior of the material, the geometry of the form, and the decisions of the maker agree.
+        </p>
+      </section>
+
+      <!-- VOLUME 2 -->
+      <section id="volume-2">
+        <h2>Volume II: Modern Stratigraphy</h2>
+
+        <h3 id="v2-overview">Overview: Material Memory and the Organization of Earth</h3>
+        <p class="lead">
+          Matter is not inert. It is intent, compressed by time, waiting for a hand patient enough to read it.
+        </p>
+
+        <h3 id="v2-chapter-1">Chapter 1 — Matter Before Image</h3>
+        <p>
+          Matter precedes the image. Long before a single mark is made, the physical properties of the medium have already dictated what that mark can legally be.
+        </p>
+
+        <h3 id="v2-chapter-2">Chapter 2 — Deep Time and Material Memory</h3>
+        <p>
+          Materials are not simply objects in space; they are structures made of time. Every object inherits that temporal depth whether the maker acknowledges it or not.
+        </p>
+
+        <h3 id="v2-chapter-3">Chapter 3 — Selection as Composition</h3>
+        <p>
+          Choosing one board over another is not preparation for the compositional act—it IS the compositional act. Selection is an act of recognition.
+        </p>
+
+        <h3 id="v2-chapter-4">Chapter 4 — Philosophy of Context</h3>
+        <p>
+          A mineral resting undisturbed in a local clay seam is geology. Bind it to a panel within a precise boundary, and it becomes art.
+        </p>
+
+        <h3 id="v2-chapter-5">Chapter 5 — Authenticity and Material Honesty</h3>
+        <p>
+          An ethical commitment to material honesty—never disguising what a material actually is, and preserving its history.
+        </p>
+
+        <h3 id="v2-chapter-6">Chapter 6 — Nexus of Timescales</h3>
+        <p>
+          The finished object becomes a meeting point where biological and geological timescales converge with human observation.
+        </p>
+
+        <h3 id="v2-chapter-7">Chapter 7 — Coordinate and Canvas</h3>
+        <p>
+          Mapping spatial coordinates and material origin directly into the canvas structure.
+        </p>
+      </section>
+
+      <!-- VOLUME 3 -->
+      <section id="volume-3">
+        <h2>Volume III: The Disciplined Eye</h2>
+
+        <h3 id="v3-preface">Preface — Perception, Judgment, and the Ethics of Seeing</h3>
+        <p class="lead">
+          This volume is not about design. It is about the observer.
+        </p>
+
+        <h3 id="v3-part-1">Part I — Perception</h3>
+        <p>
+          Perception is not a passive intake of light. It is an active discipline of attention, shaped by experience and reflection.
+        </p>
+
+        <h3 id="v3-part-2">Part II — Taste</h3>
+        <p>
+          Taste is not preference. Taste is the cultivated ability to distinguish between decisions that reveal understanding and decisions that merely imitate it.
+        </p>
+
+        <h3 id="v3-part-3">Part III — Constraint</h3>
+        <p>
+          Constraint is the condition that makes originality possible, not an obstacle to it.
+        </p>
+
+        <h3 id="v3-part-4">Part IV — Silence</h3>
+        <p>
+          Absence as an active decision in composition. A void creates tension; a gap creates rhythm.
+        </p>
+
+        <h3 id="v3-part-5">Part V — Stewardship</h3>
+        <p>
+          The maker as temporary custodian of a tradition, not its heroic originator.
+        </p>
+
+        <h3 id="v3-final">Final Chapter — The Maker</h3>
+        <p>
+          The Maker no longer asks "what can I add?" before first asking "what is already here?"
+        </p>
+      </section>
+    </main>
+  </div>
+</PhilosophyLayout>
+<style>
+.theory-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.theory-sidebar {
+  position: relative;
+}
+
+.theory-sidebar {
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+}
+
+.theory-sidebar h2 {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.sidebar-volume {
+  margin-bottom: 30px;
+}
+
+.sidebar-volume > a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.sidebar-volume ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 12px;
+}
+
+.sidebar-volume li {
+  margin-bottom: 8px;
+}
+
+.sidebar-volume li a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+
+.theory-content {
+  max-width: 720px;
+}
+
+
+@media (max-width:900px){
+
+.theory-layout {
+  display:block;
+}
+
+.theory-sidebar {
+  position:relative;
+  top:auto;
+  margin-bottom:40px;
+}
+
+}
+
+</style>
