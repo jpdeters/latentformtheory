@@ -10,7 +10,8 @@ const {
   image = "/LFT-banner.jpg"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteUrl = Astro.site ?? new URL("https://www.latentformtheory.com");
+const canonicalURL = new URL(Astro.url.pathname.replace(/\/+$/, "") || "/", siteUrl);
 
 // Dynamic description logic
 let description = Astro.props.description;
