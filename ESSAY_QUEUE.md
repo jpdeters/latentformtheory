@@ -15,19 +15,19 @@ Start here when Jason asks to "post the next essay on LFT."
 
 ## Queue
 
-No approved unpublished essays remain. The first queued essay was published on October 21, 2026.
+The first queued essay was published on October 21, 2026. Future essays may be selected from finished Google Docs under the standing authorization below.
 
 | Order | Title | Authoritative draft source | Status | Hero image |
 | --- | --- | --- | --- | --- |
 | 1 | Why Two People Never See the Same Chair | [Essay 10](https://docs.google.com/document/d/19OZff8w6596fdup0kkzp1WBvgHO_ZXJRbwrr6ArGEWs/edit) | published | AI-generated editorial chair illustration |
 
-Statuses: draft, approved, published. Approval must come from Jason, not from an assistant's inference. Preserve approved prose; substantive editorial changes require approval.
+Statuses: draft, approved, published. On October 21, 2026, Jason authorized automatic publication of one existing finished Google Docs essay every two weeks, including editorial selection and light polishing. Preserve his voice and philosophy. Do not invent autobiographical events, create new essays as substitutes, or treat unfinished outlines as publication-ready. Substantial rewrites or unresolved factual issues require Jason's input.
 
 Publication record: Jason approved the proposed standalone edit and invitation-focused ending on October 21, 2026. The Google Doc is the original source; the published Markdown contains the approved editorial adaptation. Live URL: https://www.latentformtheory.com/essays/why-two-people-never-see-the-same-chair/
 
 ## Publishing workflow
 
-A request to publish the next essay authorizes publication of the first approved, unpublished entry in queue order. If none exists, ask Jason to identify or provide the next essay rather than inventing text, order, or approval.
+A request to publish the next essay, or the scheduled publishing task, authorizes publication of the first suitable unpublished entry. If the queue is empty, select a finished Google Docs essay that advances the series, comparing source versions and current site content. Jason's standing authorization covers this selection and light editorial adaptation. If no sufficiently finished draft exists, notify Jason rather than inventing an essay.
 
 1. Refresh the queue and read applicable AGENTS.md instructions.
 2. Read the complete approved text from the recorded source.
@@ -38,7 +38,7 @@ A request to publish the next essay authorizes publication of the first approved
 7. Publish to main without overwriting concurrent work, update this queue, and record the resulting URL.
 8. Verify the live essay and index after Cloudflare deploys. A successful GitHub commit does not alone confirm live deployment. Report verification limits accurately.
 
-No recurring publication schedule is configured.
+Recurring publishing task configured: every other Wednesday morning, America/New_York, starting November 4, 2026. The task publishes to LFT and notifies Jason after live verification. Social-media posting is outside this task.
 
 ## Existing production content
 
