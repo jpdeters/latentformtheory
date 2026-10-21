@@ -15,12 +15,15 @@ Start here when Jason asks to "post the next essay on LFT."
 
 ## Queue
 
-Empty. No unpublished final essay has been selected or approved for this queue yet.
+No approved unpublished essays remain. The first queued essay was published on October 21, 2026.
 
 | Order | Title | Authoritative draft source | Status | Hero image |
 | --- | --- | --- | --- | --- |
+| 1 | Why Two People Never See the Same Chair | [Essay 10](https://docs.google.com/document/d/19OZff8w6596fdup0kkzp1WBvgHO_ZXJRbwrr6ArGEWs/edit) | published | AI-generated editorial chair illustration |
 
 Statuses: draft, approved, published. Approval must come from Jason, not from an assistant's inference. Preserve approved prose; substantive editorial changes require approval.
+
+Publication record: Jason approved the proposed standalone edit and invitation-focused ending on October 21, 2026. The Google Doc is the original source; the published Markdown contains the approved editorial adaptation. Live URL: https://www.latentformtheory.com/essays/why-two-people-never-see-the-same-chair/
 
 ## Publishing workflow
 
@@ -48,5 +51,6 @@ Inventory inspected October 21, 2026. These dates are the files' existing conten
 | 2026-08-11 | Order, Chaos, and the Arrogance of Intervention | order-chaos |
 | 2026-08-24 | The Architecture of Invisible Decisions | architecture-invisible-decisions |
 | 2026-09-13 | Beyond Subtraction: The Discovery of Composition | beyond-subtraction |
+| 2026-10-21 | Why Two People Never See the Same Chair | why-two-people-never-see-the-same-chair |
 
 Beyond Subtraction already exists in production content; do not treat it as the next unpublished essay based on older planning notes.
